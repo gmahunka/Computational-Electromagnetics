@@ -1,0 +1,6 @@
+function f = framp(t)
+
+T = 100; % ms
+I = 0.5; % A
+
+f=abs(I*sin(pi*t/T));
