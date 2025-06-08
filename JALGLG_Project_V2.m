@@ -10,7 +10,7 @@ function pdemodel
 pdetool('appl_cb',1);
 pdetool('snapon','on');
 set(ax,'DataAspectRatio',[1 1 1]);
-set(ax,'PlotBoxAspectRatio',[1 2.0000029541663662 13.333353027775779]);
+set(ax,'PlotBoxAspectRatio',[1 2.0000087287411699 13.333391524941137]);
 set(ax,'XLimMode','auto');
 set(ax,'YLimMode','auto');
 set(ax,'XTickMode','auto');
@@ -54,19 +54,12 @@ pdesetbd(9,...
 '0')
 
 % Mesh generation:
+setappdata(pde_fig,'trisize',0.00116);
 setappdata(pde_fig,'Hgrad',1.3);
 setappdata(pde_fig,'refinemethod','regular');
 setappdata(pde_fig,'jiggle',char('on','mean',''));
 setappdata(pde_fig,'MesherVersion','preR2013a');
 pdetool('initmesh')
-pdetool('jiggle')
-pdetool('refine')
-pdetool('jiggle')
-pdetool('refine')
-pdetool('jiggle')
-pdetool('refine')
-pdetool('jiggle')
-pdetool('refine')
 
 % PDE coefficients:
 pdeseteq(2,...
@@ -74,7 +67,7 @@ pdeseteq(2,...
 '0!0!0!0',...
 '0!0!framp(t)!0',...
 '3.77e7./x!0!0!0',...
-'linspace(0,200,500)',...
+'linspace(0,500,500)',...
 '0',...
 '0.0',...
 '[0 100]')
@@ -86,11 +79,11 @@ setappdata(pde_fig,'currparam',...
 
 % Solve parameters:
 setappdata(pde_fig,'solveparam',...
-char('0','413184','10','pdeadworst',...
+char('0','135123','10','pdeadworst',...
 '0.5','longest','0','1E-4','','fixed','Inf'))
 
 % Plotflags and user data strings:
-setappdata(pde_fig,'plotflags',[4 1 1 1 1 1 1 1 1 0 0 500 1 1 0 0 0 1]);
+setappdata(pde_fig,'plotflags',[4 1 1 1 1 1 1 1 1 0 0 136 1 1 0 0 0 1]);
 setappdata(pde_fig,'colstring','u./x');
 setappdata(pde_fig,'arrowstring','');
 setappdata(pde_fig,'deformstring','');

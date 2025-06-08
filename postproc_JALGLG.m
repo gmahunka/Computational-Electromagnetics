@@ -33,7 +33,7 @@ close all;
 figure();
 hold on;
 grid on;
-dt=linspace(0,250,size_u(2));
+dt=linspace(0,500,size_u(2));
 plot(dt,Psi1,'LineWidth',2);
 plot(dt,Psi2,'LineWidth',2);
 
